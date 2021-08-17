@@ -1,0 +1,1 @@
+# open5gs_5gc_ueransim_nearby_upf_sample_config
