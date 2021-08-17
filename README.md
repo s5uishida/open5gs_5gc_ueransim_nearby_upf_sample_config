@@ -30,7 +30,7 @@ This describes a very simple configuration that uses Open5GS and UERANSIM to sel
     - [Start UE connected to gNodeB1 in Loc1](#con_ue1)
     - [Ping google.com going through DN=10.45.0.0/16 on Loc1](#ping_ue1)
   - [Run UERANSIM (UE in Loc2)](#run_ue2)
-    - [Start UE connected to gNodeB1 in Loc2](#con_ue2)
+    - [Start UE connected to gNodeB2 in Loc2](#con_ue2)
     - [Ping google.com going through DN=10.46.0.0/16 on Loc2](#ping_ue2)
 - [Changelog (summary)](#changelog)
 
