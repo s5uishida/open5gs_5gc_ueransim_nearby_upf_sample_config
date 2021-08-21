@@ -451,6 +451,8 @@ Add IP addresses for SMF1 and SMF2.
 ip addr add 192.168.0.112/24 dev enp0s8
 ip addr add 192.168.0.113/24 dev enp0s8
 ```
+**Note. `enp0s8` is the network interface of `192.168.0.0/24` in my VirtualBox environment.
+Please change it according to your environment.**
 
 <h3 id="network_settings_up1">Network settings of Open5GS 5GC U-Plane1</h3>
 
