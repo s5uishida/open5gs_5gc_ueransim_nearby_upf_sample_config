@@ -252,6 +252,7 @@ Please refer to the following for building Open5GS and UERANSIM respectively.
 ```
 - `open5gs/install/etc/freeDiameter/smf1.conf`  
 `smf1.conf` is equal to the original `smf.conf`.
+
 - `open5gs/install/etc/freeDiameter/smf2.conf`
 ```diff
 --- smf.conf.orig       2021-08-09 14:06:48.000000000 +0000
