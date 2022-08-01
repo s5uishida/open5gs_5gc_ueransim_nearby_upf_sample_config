@@ -733,6 +733,7 @@ The `tcpdump` log on U-Plane1 is as follows.
 <h3 id="run_ue2">Run UERANSIM (UE in Loc2)</h3>
 
 Then the UE disconnects from gNodeB1 and connects to gNodeB2 in Loc2.
+Confirm that the packet goes through the DN of U-Plane2 in the same Loc2.
 
 <h4 id="con_ue2">Start UE connected to gNodeB2 in Loc2</h4>
 
