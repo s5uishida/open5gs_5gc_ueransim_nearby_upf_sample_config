@@ -3,7 +3,9 @@ This describes a very simple configuration that uses Open5GS and UERANSIM to sel
 
 ---
 
-<h2 id="conf_list">List of Sample Configurations</h2>
+<a id="conf_list"></a>
+
+## List of Sample Configurations
 
 1. [One SGW-C/PGW-C, one SGW-U/PGW-U and one APN](https://github.com/s5uishida/open5gs_epc_srsran_sample_config)
 2. [One SGW-C/PGW-C, Multiple SGW-Us/PGW-Us and APNs](https://github.com/s5uishida/open5gs_epc_oai_sample_config)
@@ -20,7 +22,9 @@ This describes a very simple configuration that uses Open5GS and UERANSIM to sel
 13. [VPP-UPF with DPDK](https://github.com/s5uishida/open5gs_5gc_ueransim_vpp_upf_dpdk_sample_config)
 ---
 
-<h2 id="misc">Miscellaneous Notes</h2>
+<a id="misc"></a>
+
+## Miscellaneous Notes
 
 - [Install MongoDB 6.0 and Open5GS WebUI](https://github.com/s5uishida/open5gs_install_mongodb6_webui)
 - [Install MongoDB 4.4.18 on Ubuntu 20.04 for Raspberry Pi 4B](https://github.com/s5uishida/install_mongodb_on_ubuntu_for_rp4b)
@@ -28,7 +32,9 @@ This describes a very simple configuration that uses Open5GS and UERANSIM to sel
 - [A Note for Changing Network Interface of UPF from TUN to TAP in Open5GS](https://github.com/s5uishida/change_from_tun_to_tap_in_open5gs)
 ---
 
-<h2 id="toc">Table of Contents</h2>
+<a id="toc"></a>
+
+## Table of Contents
 
 - [Overview of Open5GS 5GC Simulation Mobile Network](#overview)
 - [Changes in configuration files of Open5GS 5GC and UERANSIM UE / RAN](#changes)
@@ -60,7 +66,9 @@ This describes a very simple configuration that uses Open5GS and UERANSIM to sel
 - [Changelog (summary)](#changelog)
 
 ---
-<h2 id="overview">Overview of Open5GS 5GC Simulation Mobile Network</h2>
+<a id="overview"></a>
+
+## Overview of Open5GS 5GC Simulation Mobile Network
 
 The following minimum configuration was set as a condition.
 - The pair of gNodeB and UPF exists in the same location.
@@ -114,13 +122,17 @@ Each DNs are as follows.
 | 10.45.0.0/16 | Loc1 | ogstun | internet | uesimtun0 | U-Plane1 |
 | 10.46.0.0/16 | Loc2 | ogstun | internet | uesimtun0 | U-Plane2 |
 
-<h2 id="changes">Changes in configuration files of Open5GS 5GC and UERANSIM UE / RAN</h2>
+<a id="changes"></a>
+
+## Changes in configuration files of Open5GS 5GC and UERANSIM UE / RAN
 
 Please refer to the following for building Open5GS and UERANSIM respectively.
 - Open5GS v2.5.6 (2023.01.12) - https://open5gs.org/open5gs/docs/guide/02-building-open5gs-from-sources/
 - UERANSIM v3.2.6 - https://github.com/aligungr/UERANSIM/wiki/Installation
 
-<h3 id="changes_cp">Changes in configuration files of Open5GS 5GC C-Plane</h3>
+<a id="changes_cp"></a>
+
+### Changes in configuration files of Open5GS 5GC C-Plane
 
 - `open5gs/install/etc/open5gs/amf.yaml`
 ```diff
@@ -321,7 +333,9 @@ Please refer to the following for building Open5GS and UERANSIM respectively.
  ##############################################################
 ```
 
-<h3 id="changes_up1">Changes in configuration files of Open5GS 5GC U-Plane1</h3>
+<a id="changes_up1"></a>
+
+### Changes in configuration files of Open5GS 5GC U-Plane1
 
 - `open5gs/install/etc/open5gs/upf.yaml`
 ```diff
@@ -346,7 +360,9 @@ Please refer to the following for building Open5GS and UERANSIM respectively.
          port: 9090
 ```
 
-<h3 id="changes_up2">Changes in configuration files of Open5GS 5GC U-Plane2</h3>
+<a id="changes_up2"></a>
+
+### Changes in configuration files of Open5GS 5GC U-Plane2
 
 - `open5gs/install/etc/open5gs/upf.yaml`
 ```diff
@@ -372,9 +388,13 @@ Please refer to the following for building Open5GS and UERANSIM respectively.
          port: 9090
 ```
 
-<h3 id="changes_ueransim">Changes in configuration files of UERANSIM UE / RAN</h3>
+<a id="changes_ueransim"></a>
 
-<h4 id="changes_ran1">Changes in configuration files of RAN (gNodeB1)</h4>
+### Changes in configuration files of UERANSIM UE / RAN
+
+<a id="changes_ran1"></a>
+
+#### Changes in configuration files of RAN (gNodeB1)
 
 - `UERANSIM/config/open5gs-gnb.yaml`
 ```diff
@@ -406,7 +426,9 @@ Please refer to the following for building Open5GS and UERANSIM respectively.
  # List of supported S-NSSAIs by this gNB
 ```
 
-<h4 id="changes_ran2">Changes in configuration files of RAN (gNodeB2)</h4>
+<a id="changes_ran2"></a>
+
+#### Changes in configuration files of RAN (gNodeB2)
 
 - `UERANSIM/config/open5gs-gnb.yaml`
 ```diff
@@ -439,7 +461,9 @@ Please refer to the following for building Open5GS and UERANSIM respectively.
  # List of supported S-NSSAIs by this gNB
 ```
 
-<h4 id="changes_ue_loc1">Changes in configuration files of UE for Loc1 (IMSI-001010000000000)</h4>
+<a id="changes_ue_loc1"></a>
+
+#### Changes in configuration files of UE for Loc1 (IMSI-001010000000000)
 
 - `UERANSIM/config/open5gs-ue-loc1.yaml`
 ```diff
@@ -469,7 +493,9 @@ Please refer to the following for building Open5GS and UERANSIM respectively.
  uacAic:
 ```
 
-<h4 id="changes_ue_loc2">Changes in configuration files of UE for Loc2 (IMSI-001010000000000)</h4>
+<a id="changes_ue_loc2"></a>
+
+#### Changes in configuration files of UE for Loc2 (IMSI-001010000000000)
 
 - `UERANSIM/config/open5gs-ue-loc2.yaml`
 ```diff
@@ -499,9 +525,13 @@ Please refer to the following for building Open5GS and UERANSIM respectively.
  uacAic:
 ```
 
-<h2 id="network_settings">Network settings of Open5GS 5GC and UERANSIM UE / RAN</h2>
+<a id="network_settings"></a>
 
-<h3 id="network_settings_cp">Network settings of Open5GS 5GC C-Plane</h3>
+## Network settings of Open5GS 5GC and UERANSIM UE / RAN
+
+<a id="network_settings_cp"></a>
+
+### Network settings of Open5GS 5GC C-Plane
 
 Add IP addresses for SMF1 and SMF2.
 ```
@@ -511,7 +541,9 @@ ip addr add 192.168.0.113/24 dev enp0s8
 **Note. `enp0s8` is the network interface of `192.168.0.0/24` in my VirtualBox environment.
 Please change it according to your environment.**
 
-<h3 id="network_settings_up1">Network settings of Open5GS 5GC U-Plane1</h3>
+<a id="network_settings_up1"></a>
+
+### Network settings of Open5GS 5GC U-Plane1
 
 First, uncomment the next line in the `/etc/sysctl.conf` file and reflect it in the OS.
 ```
@@ -529,7 +561,9 @@ ip link set ogstun up
 iptables -t nat -A POSTROUTING -s 10.45.0.0/16 ! -o ogstun -j MASQUERADE
 ```
 
-<h3 id="network_settings_up2">Network settings of Open5GS 5GC U-Plane2</h3>
+<a id="network_settings_up2"></a>
+
+### Network settings of Open5GS 5GC U-Plane2
 
 First, uncomment the next line in the `/etc/sysctl.conf` file and reflect it in the OS.
 ```
@@ -547,7 +581,9 @@ ip link set ogstun up
 iptables -t nat -A POSTROUTING -s 10.46.0.0/16 ! -o ogstun -j MASQUERADE
 ```
 
-<h2 id="build">Build Open5GS and UERANSIM</h2>
+<a id="build"></a>
+
+## Build Open5GS and UERANSIM
 
 Please refer to the following for building Open5GS and UERANSIM respectively.
 - Open5GS v2.5.6 (2023.01.12) - https://open5gs.org/open5gs/docs/guide/02-building-open5gs-from-sources/
@@ -557,11 +593,15 @@ Install MongoDB on Open5GS 5GC C-Plane machine.
 It is not necessary to install MongoDB on Open5GS 5GC U-Plane machines.
 [MongoDB Compass](https://www.mongodb.com/products/compass) is a convenient tool to look at the MongoDB database.
 
-<h2 id="run">Run Open5GS 5GC and UERANSIM UE / RAN</h2>
+<a id="run"></a>
+
+## Run Open5GS 5GC and UERANSIM UE / RAN
 
 First run the 5GC, then UERANSIM (UE & RAN implementation).
 
-<h3 id="run_cp">Run Open5GS 5GC C-Plane</h3>
+<a id="run_cp"></a>
+
+### Run Open5GS 5GC C-Plane
 
 First, run Open5GS 5GC C-Plane.
 
@@ -583,7 +623,9 @@ sleep 2
 ./install/bin/open5gs-bsfd &
 ```
 
-<h3 id="run_up">Run Open5GS 5GC U-Plane1 & U-Plane2</h3>
+<a id="run_up"></a>
+
+### Run Open5GS 5GC U-Plane1 & U-Plane2
 
 Next, run Open5GS 5GC U-Plane.
 
@@ -609,14 +651,18 @@ tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
 listening on ogstun, link-type RAW (Raw IP), capture size 262144 bytes
 ```
 
-<h3 id="run_ran">Run UERANSIM (gNodeBs)</h3>
+<a id="run_ran"></a>
+
+### Run UERANSIM (gNodeBs)
 
 Run each gNodeB with TAC=1 and TAC=2 in two locations.  
 Please refer to the following for usage of UERANSIM.
 
 https://github.com/aligungr/UERANSIM/wiki/Usage
 
-<h4 id="run_ran1">Start gNodeB1 with TAC=1 in Loc1</h4>
+<a id="run_ran1"></a>
+
+#### Start gNodeB1 with TAC=1 in Loc1
 
 ```
 # ./nr-gnb -c ../config/open5gs-gnb.yaml
@@ -636,7 +682,9 @@ The Open5GS C-Plane log when executed is as follows.
 01/12 23:10:51.007: [amf] INFO: gNB-N2[192.168.0.131] max_num_of_ostreams : 10 (../src/amf/amf-sm.c:713)
 ```
 
-<h4 id="run_ran2">Start gNodeB2 with TAC=2 in Loc2</h4>
+<a id="run_ran2"></a>
+
+#### Start gNodeB2 with TAC=2 in Loc2
 
 ```
 # ./nr-gnb -c ../config/open5gs-gnb.yaml
@@ -656,11 +704,15 @@ The Open5GS C-Plane log when executed is as follows.
 01/12 23:11:55.013: [amf] INFO: gNB-N2[192.168.0.132] max_num_of_ostreams : 10 (../src/amf/amf-sm.c:713)
 ```
 
-<h3 id="run_ue1">Run UERANSIM (UE in Loc1)</h3>
+<a id="run_ue1"></a>
+
+### Run UERANSIM (UE in Loc1)
 
 Confirm that the packet goes through the DN of U-Plane1 in the same Loc1 by connecting to gNodeB1 in Loc1.
 
-<h4 id="con_ue1">Start UE connected to gNodeB1 in Loc1</h4>
+<a id="con_ue1"></a>
+
+#### Start UE connected to gNodeB1 in Loc1
 
 ```
 # ./nr-ue -c ../config/open5gs-ue-loc1.yaml 
@@ -786,7 +838,9 @@ The TUNnel interface `uesimtun0` is created as follows.
 ...
 ```
 
-<h4 id="ping_ue1">Ping google.com going through DN=10.45.0.0/16 on Loc1</h4>
+<a id="ping_ue1"></a>
+
+#### Ping google.com going through DN=10.45.0.0/16 on Loc1
 
 Confirm by using `tcpdump` that the packet goes through `if=ogstun` on U-Plane1.
 ```
@@ -807,12 +861,16 @@ The `tcpdump` log on U-Plane1 is as follows.
 ```
 **Note. Make sure the packet does not go through U-Plane2. The UE connects to the DN of U-Plane1 in the same Loc1 according to the connected gNodeB1 in Loc1.**
 
-<h3 id="run_ue2">Run UERANSIM (UE in Loc2)</h3>
+<a id="run_ue2"></a>
+
+### Run UERANSIM (UE in Loc2)
 
 Then the UE disconnects from gNodeB1 and connects to gNodeB2 in Loc2.
 Confirm that the packet goes through the DN of U-Plane2 in the same Loc2.
 
-<h4 id="con_ue2">Start UE connected to gNodeB2 in Loc2</h4>
+<a id="con_ue2"></a>
+
+#### Start UE connected to gNodeB2 in Loc2
 
 ```
 # ./nr-ue -c ../config/open5gs-ue-loc2.yaml 
@@ -914,7 +972,9 @@ The TUNnel interface `uesimtun0` is created as follows.
 ...
 ```
 
-<h4 id="ping_ue2">Ping google.com going through DN=10.46.0.0/16 on Loc2</h4>
+<a id="ping_ue2"></a>
+
+#### Ping google.com going through DN=10.46.0.0/16 on Loc2
 
 Confirm by using `tcpdump` that the packet goes through `if=ogstun` on U-Plane2.
 ```
@@ -938,7 +998,9 @@ The `tcpdump` log on U-Plane2 is as follows.
 ---
 I was able to confirm the very simple configuration in which one UE connects to the UPF in the same location according connected gNodeB. I would like to thank the excellent developers and all the contributors of Open5GS and UERANSIM.
 
-<h2 id="changelog">Changelog (summary)</h2>
+<a id="changelog"></a>
+
+## Changelog (summary)
 
 - [2023.01.12] Updated to Open5GS v2.5.6.
 - [2022.06.07] Updated to Open5GS v2.4.7 and UERANSIM v3.2.6.
